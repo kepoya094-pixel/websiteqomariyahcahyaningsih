@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParentingCare - Portal Edukasi & Komunitas Parenting</title>
+  
+  <!-- Font Google Estetik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR ESTETIK -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="switchTab('beranda', event)">
+        <span class="logo-icon">🌸</span> ParentingCare
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item active" onclick="switchTab('beranda', event)">Beranda</a></li>
+        <li><a href="#" class="nav-item" onclick="switchTab('artikel', event)">Artikel & Panduan</a></li>
+        <li><a href="#" class="nav-item" onclick="switchTab('komunitas', event)">Komunitas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 1. HALAMAN BERANDA -->
+  <main id="sec-beranda" class="section-page">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">✨ Ruang Belajar Bunda & Ayah</span>
+        <h1>Panduan Tumbuh Kembang & Komunitas Si Kecil</h1>
+        <p>Temukan panduan lengkap mengenai nutrisi MPASI, penanganan emosi tantrum, serta ruang diskusi ramah bersama sesama orang tua.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="switchTab('artikel')">Jelajahi Artikel ➔</button>
+          <button class="btn-secondary" onclick="switchTab('komunitas')">Gabung Komunitas 💬</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT TOPIK -->
+    <section class="preview-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Topik Pilihan Populer</h2>
+          <p>Klik menu di atas atau kartu di bawah untuk menjelajahi informasi lebih rinci.</p>
+        </div>
+        <div class="preview-grid">
+          <div class="preview-card" onclick="switchTab('artikel')">
+            <div class="preview-icon">🍼</div>
+            <h3>Nutrisi & MPASI</h3>
+            <p>Tahapan tekstur, prinsip kebersihan, dan standar gizi lengkap.</p>
+          </div>
+          <div class="preview-card" onclick="switchTab('artikel')">
+            <div class="preview-icon">🧸</div>
+            <h3>Perilaku & Tantrum</h3>
+            <p>Trik meredakan emosi si kecil dengan tenang tanpa membentak.</p>
+          </div>
+          <div class="preview-card" onclick="switchTab('komunitas')">
+            <div class="preview-icon">💬</div>
+            <h3>Forum Komunitas</h3>
+            <p>Tanya jawab, berbagi pengalaman, dan support system sesama Bunda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 2. HALAMAN ARTIKEL (TERPISAH) -->
+  <main id="sec-artikel" class="section-page" style="display: none;">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">Kumpulan Informasi</span>
+        <h2>Daftar Panduan Parenting</h2>
+        <p>Pilih salah satu artikel di bawah ini untuk membaca materi lengkapnya.</p>
+      </div>
+
+      <div class="card-grid">
+        
+        <!-- Kartu MPASI -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="mpasi.jpg" alt="Panduan MPASI" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1584839627923-9675b818630f?auto=format&fit=crop&w=600&q=80'">
+            <span class="card-tag">Nutrisi</span>
+          </div>
+          <div class="card-body">
+            <h3>Panduan Dasar MPASI Aman & Bergizi</h3>
+            <p>Syarat mulai MPASI usia 6 bulan, prinsip kebersihan, tahapan tekstur makanan, serta rekomendasi standar gizi.</p>
+            <button class="btn-read" onclick="openModal(1)">Baca Selengkapnya ➔</button>
+          </div>
+        </div>
+
+        <!-- Kartu Tantrum -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="tantrum.jpg" alt="Mengatasi Tantrum" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80'">
+            <span class="card-tag">Emosi & Perilaku</span>
+          </div>
+          <div class="card-body">
+            <h3>Cara Mengatasi & Mencegah Tantrum Balita</h3>
+            <p>Langkah tenang menghadapi tantrum, teknik validasi emosi anak, cara pencegahan efektif, dan tanda waspada.</p>
+            <button class="btn-read" onclick="openModal(2)">Baca Selengkapnya ➔</button>
+          </div>
+        </div>
+
+        <!-- Kartu Tidur -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="tidur.jpg" alt="Tidur Nyenyak Bayi" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80'">
+            <span class="card-tag">Kesehatan & Pola Tidur</span>
+          </div>
+          <div class="card-body">
+            <h3>Rutinitas Agar Bayi Tidur Lebih Nyenyak</h3>
+            <p>Langkah bedtime routine yang teratur, menciptakan kondisi kamar ideal, serta jam tidur tepat sesuai rentang usia.</p>
+            <button class="btn-read" onclick="openModal(3)">Baca Selengkapnya ➔</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. HALAMAN KOMUNITAS (FITUR BARU) -->
+  <main id="sec-komunitas" class="section-page" style="display: none;">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">Ruang Diskusi & Sharing</span>
+        <h2>Komunitas ParentingCare</h2>
+        <p>Tempat aman untuk saling berbagi pengelalaman, bertanya, dan mencari support system.</p>
+      </div>
+
+      <div class="komunitas-layout">
+        
+        <!-- Form Tanya Komunitas -->
+        <div class="forum-box">
+          <h3>💬 Pengalaman / Pertanyaan Bunda</h3>
+          <form id="forumForm" onsubmit="tambahPostingan(event)">
+            <input type="text" id="inputNama" placeholder="Nama / Inisial Bunda..." required>
+            <textarea id="inputPesan" rows="4" placeholder="Tuliskan pertanyaan atau cerita seputar MPASI/tumbuh kembang si kecil di sini..." required></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%;">Kirim ke Forum</button>
+          </form>
+
+          <div class="forum-feed" id="forumFeed">
+            <!-- Kiriman Forum Dinamis Masuk Sini -->
+            <div class="feed-item">
+              <div class="feed-user">🌸 Bunda Alya</div>
+              <p class="feed-text">Si kecil usia 7 bulan tiba-tiba GTM (GTM / Gerakan Tutup Mulut) pas makan puree daging, ada saran bumbu aroma alami yang aman tak ya?</p>
+              <span class="feed-time">Baru saja</span>
+            </div>
+            <div class="feed-item">
+              <div class="feed-user">🌸 Bunda Rania</div>
+              <p class="feed-text">Anakku kalau malam sering terbangun 3-4x, padahal lampu sudah diredupkan. Apakah ada tips khusus untuk bedtime routine?</p>
+              <span class="feed-time">2 jam lalu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Grup Whatsapp & Telegram -->
+        <div class="sidebar-box">
+          <h3>Grup Chat WhatsApp / Telegram</h3>
+          <p>Mari bergabung dengan ribuan Bunda lainnya di grup WhatsApp dan Telegram harian kami.</p>
+          
+          <div class="group-card">
+            <div class="group-info">
+              <h4>Grup MPASI & Nutrisi 🍼</h4>
+              <p>1.200+ Anggota Active</p>
+            </div>
+            <button class="btn-join" onclick="alert('Terima kasih! Anda akan diarahkan ke Grup WhatsApp MPASI.')">Join WA</button>
+          </div>
+
+          <div class="group-card">
+            <div class="group-info">
+              <h4>Grup Sleep & Routine ☁️</h4>
+              <p>850+ Anggota Active</p>
+            </div>
+            <button class="btn-join" onclick="alert('Terima kasih! Anda akan diarahkan ke Grup Telegram Tidur Bayi.')">Join Tele</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- POP-UP MODAL (BACA ARTIKEL LENGKAP) -->
+  <div id="articleModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="modal-header">
+        <span id="modalCategory" class="badge-pink">Category</span>
+        <h2 id="modalTitle">Judul Artikel</h2>
+      </div>
+      <img id="modalImg" src="" alt="Gambar Artikel" class="modal-img">
+      <div id="modalContent" class="modal-body">
+        <!-- Content injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>©26 Qomariyah Cahyaningsih XII TJKT 3. Dibuat dengan 💖 untuk Tumbuh Kembang Si Kecil. Tahun 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
